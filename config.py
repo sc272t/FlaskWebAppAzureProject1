@@ -30,7 +30,6 @@ class Config(object):
 
     #AUTHORITY = "https://login.microsoftonline.com/common"  # For multi-tenant app, else put tenant name
     AUTHORITY = "https://login.microsoftonline.com/8562b68c-8b4b-4523-b44e-f8c6ba9cd22b"
-    #AUTHORITY = "https://login.microsoftonline.com/DefaultTenant"
 	
     CLIENT_ID = "cf38c251-279c-40d2-88ca-b5c6f8296305"
 
