@@ -35,7 +35,8 @@ def home():
     return render_template(
         'index.html',
         title='Home Page',
-        posts=posts
+        posts=posts,
+        log=log
     )
 
 @app.route('/new_post', methods=['GET', 'POST'])
