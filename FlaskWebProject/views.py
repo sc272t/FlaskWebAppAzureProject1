@@ -19,6 +19,17 @@ imageSourceUrl = 'https://'+ app.config['BLOB_ACCOUNT']  + '.blob.core.windows.n
 @app.route('/home')
 @login_required
 def home():
+    #log successful and failed attempts to login
+    log = request.values.get('log_button')
+    if log:
+        if log == 'info':
+            app.logger.info('No issues')
+        elif log == 'warning':
+            app.logger.warning('Warning occurred.')
+        elif log == 'error':
+            app.logger.error('Error occurred.')
+        elif log == 'critical':
+            app.logger.critical('Critical login error occurred.')
     user = User.query.filter_by(username=current_user.username).first_or_404()
     posts = Post.query.all()
     return render_template(
